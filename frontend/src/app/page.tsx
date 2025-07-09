@@ -3,6 +3,7 @@
 import Slider from "./components/Slider"
 import MostSold from "./components/MostSold"
 import Offers from "./components/Offers"
+import Tags from "./components/Tags"
 
 export default function Homepage() {
   return (
@@ -12,6 +13,8 @@ export default function Homepage() {
       <MostSold/>
 
       <Offers/>
+
+      <Tags/>
     </div>
   )
 }

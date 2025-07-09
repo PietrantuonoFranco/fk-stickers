@@ -30,7 +30,7 @@ export default function Slider() {
 
   return (
     <>
-      <div className="relative bg-gray-100 overflow-hidden">
+      <div className="relative overflow-hidden">
         {/* Geometric Lines */}
         <div className="absolute inset-0 m-0">
           <Image
