@@ -75,7 +75,7 @@ export default function Header() {
             </Link>
 
             {/* SignUp */}
-            <Link href="#" className="flex items-center gap-2 text-fk-white hover:text-fk-lila hover:drop-shadow-lg">
+            <Link href="/signup" className="flex items-center gap-2 text-fk-white hover:text-fk-lila hover:drop-shadow-lg">
               <span className="text-sm">Signup</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
                 <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12.5 22H6.59c-1.545 0-2.774-.752-3.877-1.803c-2.26-2.153 1.45-3.873 2.865-4.715A10.65 10.65 0 0 1 15 14.78m1.5-8.28a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m2 15.5v-7M15 18.5h7" color="currentColor" />
