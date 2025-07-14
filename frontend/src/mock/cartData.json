@@ -1,0 +1,23 @@
+[
+    {
+        "idProduct": 1,
+        "quantity": 1,
+        "finish": "Glassy",
+        "size": "Small"
+    }, {
+        "idProduct": 4,
+        "quantity": 2,
+        "finish": "Holographic",
+        "size": "Medium"
+    }, {
+        "idProduct": 5,
+        "quantity": 3,
+        "finish": "Matte",
+        "size": "Large"
+    }, {
+        "idProduct": 3,
+        "quantity": 1,
+        "finish": "Transparent",
+        "size": "Extra Large"
+    }
+]

@@ -33,7 +33,7 @@ export default function Offers() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto cursor-pointer">
               {products.map((product) => (
-                <div key={product.id} className="bg-gray-50 rounded-md shadow-md">
+                <div key={product.id} className="text-fk-dark-gray shadow-lg rounded-xl border-1 border-gray-300 bg-gray-50 backdrop-blur-sm p-2">
                   <div className="p-4">
                     {/* Product Image Placeholder */}
                     <div className="mb-4 h-32 bg-gray-50 flex items-center justify-center">

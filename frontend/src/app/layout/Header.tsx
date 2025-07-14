@@ -50,7 +50,7 @@ export default function Header() {
             </svg>
           </Link>
 
-          <Link href="#" className="text-fk-white hover:text-fk-lila hover:drop-shadow-lg">
+          <Link href="/cart" className="text-fk-white hover:text-fk-lila hover:drop-shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" color="currentColor">
                 <path d="M8 16h7.263c4.488 0 5.17-2.82 5.998-6.93c.239-1.187.358-1.78.071-2.175s-.837-.395-1.938-.395H6" />
