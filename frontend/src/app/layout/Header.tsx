@@ -27,7 +27,7 @@ export default function Header() {
           <SearchBar className="text-gray-400"/>
         </div>
 
-        {/* Navigation Icons */}
+        {/* Tags */}
         <div className="flex items-center justify-end gap-4">
           <Link href="#" className="text-fk-white hover:text-fk-lila hover:drop-shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24">
@@ -41,15 +41,14 @@ export default function Header() {
 
           <div className="w-px h-8 bg-purple-400" />
 
+          {/* Likes */}
           <Link href="#" className="text-fk-white hover:text-fk-lila hover:drop-shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24">
-              <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" color="currentColor">
-                <path d="M12 21c-1.341 0-2.114-.572-3.66-1.717C.222 13.275 1.018 6.153 4.537 3.994c2.682-1.645 5.023-.982 6.429.074c.576.433.864.65 1.034.65s.458-.217 1.034-.65c1.406-1.056 3.747-1.719 6.429-.074C21.18 5.048 22.25 7.286 21.949 10" />
-                <path d="M14 18s1 0 2 2c0 0 3.177-5 6-6" />
-              </g>
+            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.5 12.572L12 20l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572" />
             </svg>
           </Link>
 
+          {/* Cart */}
           <Link href="/cart" className="text-fk-white hover:text-fk-lila hover:drop-shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" color="currentColor">
