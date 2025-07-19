@@ -161,12 +161,12 @@ export default function Cart() {
                             <div className="flex items-center my-1 gap-2">
                               <span className="text-sm font-medium mr-2">Quantity:</span>
                               <button
-                                className="flex items-center justify-center shadow-sm rounded-md h-6 w-6 p-1 bg-transparent border-1 border-gray-300 cursor-pointer hover:bg-gray-200 hover:border-fk-dark-gray hover:shadow-md"
+                                className="main-button flex items-center justify-center shadow-sm rounded-md h-6 w-6 p-1 hover:shadow-md"
                                 onClick={() => updateQuantity(data.idProduct, data.quantity - 1)}
                               >
                                 {/* Minus icon */}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                  <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4" color="currentColor" />
+                                  <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M20 12H4" color="currentColor" />
                                 </svg>
                               </button>
                               <input
@@ -177,12 +177,12 @@ export default function Cart() {
                                 min="1"
                               />
                               <button
-                                className="flex items-center justify-center shadow-sm rounded-md h-6 w-6 p-1 bg-transparent border-1 border-gray-300 cursor-pointer hover:bg-gray-200 hover:border-fk-dark-gray hover:shadow-md"
+                                className="main-button flex items-center justify-center shadow-sm rounded-md h-6 w-6 p-1 hover:shadow-md"
                                 onClick={() => updateQuantity(data.idProduct, data.quantity + 1)}
                               >
                                 {/* Plus icon */}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                  <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m-8-8h16" color="currentColor" />
+                                  <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 4v16m-8-8h16" color="currentColor" />
                                 </svg>
                               </button>
                             </div>
@@ -202,7 +202,7 @@ export default function Cart() {
                                 <div className="text-2xl font-bold">{product.salePrice.toFixed(2)}</div>
                               </div>
 
-                              <button className="w-full bg-black rounded-lg text-white cursor-pointer hover:bg-gray-800 h-8 px-4">Buy now</button>
+                              <button className="main-button w-full rounded-lg h-8 px-4">Buy now</button>
                             </div>
                           </div>
                         </div>
@@ -238,7 +238,7 @@ export default function Cart() {
                     )}
                   </div>
 
-                  <button className="w-full bg-black text-white rounded-lg cursor-pointer hover:bg-gray-800 h-8">Buy</button>
+                  <button className="main-button w-full rounded-lg h-8">Buy</button>
                 </div>
               </div>
             </div>
