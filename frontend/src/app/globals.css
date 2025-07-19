@@ -11,7 +11,7 @@
   --color-fk-violet-blue: #6448EF;
   --color-fk-lila: #CAA8F5;
   --color-fk-orange: #EE6352;
-  --color-fk-white: #ECEBE4;
+  --color-fk-white: #FCFBF4;
   --color-fk-dark-gray: #1C1C1C;
   --color-fk-blue: #446DF6;
   --color-fk-red: #DF2C3B;
@@ -50,6 +50,7 @@ body {
   background: var(--color-fk-white);
   color: var(--color-fk-violet-blue);
   border: 2px solid var(--color-fk-violet-blue);
+  cursor: pointer;
 }
 
 .tag {
