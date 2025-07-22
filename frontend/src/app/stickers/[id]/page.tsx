@@ -142,7 +142,7 @@ export default function Component() {
               <div className="flex flex-col justify-center items-start">
                 <span className="text-lg text-gray-500 line-through">$119.99</span>
                 <div className="flex items-center space-x-2">
-                  <span className="text-3xl font-bold text-gray-900">$99.99</span>
+                  <span className="text-3xl font-bold text-fk-dark-gray">$99.99</span>
                   <p className="bg-green-100 py-1 px-2 text-sm rounded-full text-green-800">17% OFF</p>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function Component() {
 
             {/* Description */}
             <div className="space-y-3">
-              <h3 className="font-semibold text-gray-900">Description</h3>
+              <h3 className="font-semibold text-fk-dark-gray">Description</h3>
               <p className="text-gray-600 leading-relaxed">
                 Experience premium quality with this exceptional product. Crafted with attention to detail and designed
                 for modern lifestyles, this item combines functionality with style. Perfect for everyday use, it offers
@@ -176,10 +176,10 @@ export default function Component() {
 
             {/* Related Tags */}
             <div className="space-y-3">
-              <h3 className="font-semibold text-gray-900">Related tags</h3>
+              <h3 className="font-semibold text-fk-dark-gray">Related tags</h3>
               <div className="flex flex-wrap gap-2">
                 {relatedTags.map((tag, index) => (
-                  <div key={index} className="py-1 px-2 text-xs shadow-xs rounded-full border-1 bg-gray-100 border-gray-300">
+                  <div key={index} className="tag py-1 px-3 text-sm shadow-xs">
                     {tag}
                   </div>
                 ))}
@@ -188,7 +188,7 @@ export default function Component() {
 
             {/* Buy Button */}
             <div className="pt-12 flex justify-end items-end">
-              <button className="rounded-xl py-3 px-12 text-white bg-fk-dark-gray font-semibold hover:bg-gray-700 cursor-pointer">
+              <button className="main-button rounded-xl py-2 px-8 font-semibold hover:shadow-md duration-300 transition-all">
                 Buy now
               </button>
             </div>
