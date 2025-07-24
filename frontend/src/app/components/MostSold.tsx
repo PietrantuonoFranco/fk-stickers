@@ -1,7 +1,7 @@
 "use client"
 
 import products from "../../mock/products.json"
-import Image from "next/image"
+import Sticker from "./Sticker"
 
 export default function MostSold() {
   return (
@@ -33,35 +33,7 @@ export default function MostSold() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto cursor-pointer">
               {products.map((product) => (
-                <div key={product.id} className="bg-gray-50 rounded-md shadow-md">
-                  <div className="p-4">
-                    {/* Product Image Placeholder */}
-                    <div className="mb-4 h-32 bg-gray-50 flex items-center justify-center">
-                      <div className="flex justify-center items-center">
-                        <Image
-                          src={`/images/${product.id}.jpg`}
-                          alt="FK Stickers logo"
-                          width={500}
-                          height={500}
-                          className="cover h-28 w-28"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Product Info */}
-                    <h3 className="font-medium text-fk-dark-gray text-sm mb-2 hover:text-fk-blue">{product.name}</h3>
-
-                    <div className="mb-2">
-                      <span className="text-xs text-gray-500 line-through block">{product.originalPrice}</span>
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-fk-dark-gray text-lg">{product.salePrice}</span>
-                        <span className="text-xs text-green-600 font-medium">{product.discount}</span>
-                      </div>
-                    </div>
-
-                    <p className="text-xs text-gray-600">Free shipping for your first purchase</p>
-                  </div>
-                </div>
+                <Sticker key={`most-sold-${product.id}`} product={product}/>
               ))}
             </div>
           </div>
