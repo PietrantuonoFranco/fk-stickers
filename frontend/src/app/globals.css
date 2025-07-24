@@ -53,6 +53,32 @@ body {
   cursor: pointer;
 }
 
+.secondary-button {
+  background: var(--color-fk-white);
+  color: var(--color-fk-violet-blue);
+  border: 2px solid var(--color-fk-violet-blue);
+}
+
+.secondary-button:hover {
+  background: var(--color-fk-violet-blue);
+  color: var(--color-fk-white);
+  border: 2px solid var(--color-fk-violet-blue);
+  cursor: pointer;
+}
+
+.cancel-button {
+  background: var(--color-fk-white);
+  color: var(--color-fk-red);
+  border: 2px solid var(--color-fk-red);
+}
+
+.cancel-button:hover {
+  background: var(--color-fk-red);
+  color: var(--color-fk-white);
+  border: 2px solid var(--color-fk-red);
+  cursor: pointer;
+}
+
 .tag {
   border-radius: 9999px;
   background-color: #f3e8ff;
