@@ -1,0 +1,9 @@
+{
+    "id": "2",
+    "username": "SuperClient",
+    "email": "client@example.com",
+    "name": "Jhon",
+    "surname": "Doe",
+    "password": "password123",
+    "role": "client"
+}

@@ -1,0 +1,38 @@
+ [
+    {
+        "id": 1,
+        "name": "Cat",
+        "originalPrice": 119.99,
+        "salePrice": 99.99,
+        "discount": "17% OFF",
+        "author": "KittyLover"
+    }, {
+        "id": 2,
+        "name": "Tux",
+        "originalPrice": 119.99,
+        "salePrice": 99.99,
+        "discount": "17% OFF",
+        "author": "LevantadorDeServidores"
+    }, {
+        "id": 3,
+        "name": "Scouting Legion Logo",
+        "originalPrice": 119.99,
+        "salePrice": 99.99,
+        "discount": "17% OFF",
+        "author": "ErenRumbling"
+    }, {
+        "id": 4,
+        "name": "Rolling Stones Logo",
+        "originalPrice": 119.99,
+        "salePrice": 99.99,
+        "discount": "17% OFF",
+        "author": "Rollinga900"
+    }, {
+        "id": 5,
+        "name": "CA Independiente",
+        "originalPrice": 119.99,
+        "salePrice": 99.99,
+        "discount": "17% OFF",
+        "author": "BochaKiller"
+    }
+]
