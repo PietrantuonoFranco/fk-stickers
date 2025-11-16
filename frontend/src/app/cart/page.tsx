@@ -216,7 +216,7 @@ export default function Cart() {
 
           {/* Order Summary Section */}
           <div className="w-80">
-            <div className="sticky top-5 w-80 text-fk-dark-gray shadow-lg rounded-xl border-1 border-gray-300 bg-white backdrop-blur-sm p-2">
+            <div className="sticky top-5 w-80 text-fk-dark-gray shadow-lg rounded-xl border-1 border-gray-300 bg-gray-50 backdrop-blur-sm p-2">
               <div className="p-6">
                 <div>
                   <h2 className="text-2xl font-bold mb-1">Order summary</h2>
