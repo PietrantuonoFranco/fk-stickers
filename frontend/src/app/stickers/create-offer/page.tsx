@@ -109,7 +109,7 @@ export default function CreateOffer() {
             {/* Stickers */}
             <div className="w-full h-150 rounded-2xl border-1 border-gray-300 shadow-md p-4 grid grid-cols-6 gap-4">
               {products.map(product => (
-                <div  className="h-60 text-fk-dark-gray shadow-md rounded-xl border-1 border-gray-300 bg-gray-50 backdrop-blur-sm p-2">
+                <div id={`${product}`} className="h-60 text-fk-dark-gray shadow-md rounded-xl border-1 border-gray-300 bg-gray-50 backdrop-blur-sm p-2">
                   <div className="relative p-4">
                     {/* Product Image Placeholder */}
                     <div className="mb-4 h-32 bg-gray-50 flex items-center justify-center">
