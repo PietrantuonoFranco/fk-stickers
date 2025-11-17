@@ -1,12 +1,19 @@
 import "reflect-metadata"
-import { Entity, Column, ManyToOne, JoinColumn } from "typeorm"
-import { Role } from "./Role"
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, ManyToOne, OneToMany } from "typeorm"
+
 import bcrypt from "bcrypt"
 import "dotenv"
 
-@Entity()
+import { Role } from "./Role"
+import { Purchase } from "./Purchase"
+import { Sticker } from "./Sticker"
+import { UserFavouriteSticker } from "./UserFavouriteSticker"
+import { UserNotification } from "./UserNotification"
+
+
+@Entity('users')
 export class User {
-    @Column()
+    @PrimaryGeneratedColumn()
     id!: number
 
     @Column({ type: "varchar", length: 45, unique: true })
@@ -15,18 +22,34 @@ export class User {
     @Column({ type: "varchar", length: 45, unique: true })
     email!: string
     
-    @Column({ type: "varchar", length: 45, unique: true })
+    @Column({ type: "varchar", length: 45 })
     name!: string
 
-    @Column({ type: "varchar", length: 45, unique: true })
+    @Column({ type: "varchar", length: 45 })
     surname!: string
 
-    @Column({ type: "varchar", length: 45, unique: true })
+    @Column({ type: "varchar", length: 255 })
     password!: string
 
     @ManyToOne(() => Role)
         @JoinColumn({ name: 'role_id' })
         rol!: Role;
+    
+    @OneToMany(() => UserFavouriteSticker, favourite => favourite.user)
+        favouriteStickers!: UserFavouriteSticker[];
+
+    @OneToMany(() => Purchase, purchase => purchase.user)
+    purchases!: Purchase[];
+
+    @OneToMany(() => Sticker, sticker => sticker.author)
+    createdStickers!: Sticker[];
+
+    @OneToMany(() => UserNotification, notification => notification.userSender)
+    sentNotifications!: UserNotification[];
+
+    @OneToMany(() => UserNotification, notification => notification.userReceiver)
+    receivedNotifications!: UserNotification[];
+
 
     // Methods
     async hashpassword() {
