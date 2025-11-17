@@ -1,10 +1,10 @@
 import "reflect-metadata";
-import { Entity, Column, OneToMany } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm"
 import { User } from "./User";
 
-@Entity()
+@Entity('roles')
 export class Role {
-    @Column()
+    @PrimaryGeneratedColumn()
     id!: number
 
     @Column()
