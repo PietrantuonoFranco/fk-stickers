@@ -4,8 +4,19 @@ import dotenv from "dotenv"
 
 // Entidades
 
-import { User } from "./src/entity/User"
-import { Role } from "./src/entity/Role"
+import { Notification } from "./entity/Notification"
+import { Offer } from "./entity/Offer"
+import { Purchase } from "./entity/Purchase"
+import { PurchaseDetail } from "./entity/PurchaseDetail"
+import { Role } from "./entity/Role"
+import { Size } from "./entity/Size"
+import { Sticker } from "./entity/Sticker"
+import { StickerOffer } from "./entity/StickerOffer"
+import { StickerTag } from "./entity/StickerTag"
+import { Tag } from "./entity/Tag"
+import { User } from "./entity/User"
+import { UserFavouriteSticker } from "./entity/UserFavouriteSticker"
+import { UserNotification } from "./entity/UserNotification"
 
 dotenv.config();
 
@@ -18,7 +29,21 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_NAME,
     synchronize: true,
     logging: true,
-    entities: [User, Role],
+    entities: [
+        Notification,
+        Offer,
+        Purchase,
+        PurchaseDetail,
+        Role,
+        Size,
+        Sticker,
+        StickerOffer,
+        StickerTag,
+        Tag,
+        User,
+        UserFavouriteSticker,
+        UserNotification
+    ],
     subscribers: [],
     migrations: [],
 })
