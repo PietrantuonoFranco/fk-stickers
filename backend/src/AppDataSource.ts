@@ -45,7 +45,7 @@ export const AppDataSource = new DataSource({
         UserNotification
     ],
     subscribers: [],
-    migrations: [],
+    migrations: ["dist/src/migrations/**/*.js"],
 })
 
 async function initializeDatabaseWithHealthCheck() {
