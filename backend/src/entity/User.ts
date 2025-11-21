@@ -33,7 +33,7 @@ export class User {
 
     @ManyToOne(() => Role)
         @JoinColumn({ name: 'role_id' })
-        rol!: Role;
+        role!: Role;
     
     @OneToMany(() => UserFavouriteSticker, favourite => favourite.user)
         favouriteStickers!: UserFavouriteSticker[];
@@ -52,11 +52,11 @@ export class User {
 
 
     // Methods
-    async hashpassword() {
+    async hashPassword() {
         this.password = await bcrypt.hash(this.password, parseInt(process.env.SALT_ROUNDS  || "10"));
     }
     
-    async comparepassword(attempt: string): Promise<boolean> {
+    async comparePassword(attempt: string): Promise<boolean> {
         return await bcrypt.compare(attempt, this.password);
     }
 }
