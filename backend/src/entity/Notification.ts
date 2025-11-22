@@ -9,7 +9,7 @@ export class Notification {
     @Column({ type: "varchar", length: 45 })
     message!: string;
 
-    @Column({ type: "datetime" })
+    @Column({ type: "timestamp" })
     timestamp!: Date;
 
     @OneToMany(() => UserNotification, userNotification => userNotification.notification)

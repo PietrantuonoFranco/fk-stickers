@@ -10,8 +10,8 @@ export class Purchase {
     @Column({ type: "float" })
     total!: number;
 
-    @Column({ type: "datetime" })
-    date!: Date;
+    @Column({ type: "timestamp" })
+    timestamp!: Date;
 
     @ManyToOne(() => User, user => user.purchases) // Relación con la entidad User
     @JoinColumn({ name: 'user_id' })
