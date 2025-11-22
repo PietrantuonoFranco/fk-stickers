@@ -1,4 +1,4 @@
-import { Request, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import "dotenv"
 
@@ -10,7 +10,7 @@ import InternalServerExcepcion from "../exceptions/InternalServerException";
 import InvalidCredentialsException from "../exceptions/InvalidCredentialsException";
 
 
-export const authMiddleware = async (request: Request, next: NextFunction) => {
+export const authMiddleware = async (request: Request, response: Response, next: NextFunction) => {
   try {
     const token = request.cookies.authToken;
       
