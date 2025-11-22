@@ -10,7 +10,8 @@
     "typeorm": "^0.3.27"
   },
   "scripts": {
-    "server": "node dist/index.js"
+    "server": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only index.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
@@ -20,6 +21,7 @@
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.10.1",
-    "typescript": "^5.8.3"
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
   }
 }
