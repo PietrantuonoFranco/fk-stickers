@@ -13,8 +13,8 @@ services:
   #   networks:
   #     - fk-stickers-network
 
-  postgres_db:
-    image: postgres:15
+  db:
+    image: postgres:15-alpine
     container_name: fk-stickers-db
     environment:
       POSTGRES_USER: ${DB_USER}
@@ -26,3 +26,10 @@ services:
       - db-data:/var/lib/postgresql/data
     networks:
       - fk-stickers-network
+
+volumes:
+  db-data:
+    driver: local
+networks:
+  fk-stickers-network:
+    driver: bridge
