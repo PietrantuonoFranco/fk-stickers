@@ -4,17 +4,21 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv"
 
-dotenv.config();
-
-
 import { AppDataSource } from "./src/AppDataSource";
-
 
 //Routes
 import AuthRoutes from "./src/routes/AuthRoutes";
 
 
-AppDataSource.initialize().then(async () => {
+dotenv.config();
+
+AppDataSource.initialize()
+  // Database connection
+  .then(() => console.log("✅ Conection to the database established successfully"))
+  .catch((error) => console.log("❌ Error when connecting to the database: ", error))
+    
+  // Start Express server
+  .then(async () => {
     // Application instance
     const app = express();
 
