@@ -15,9 +15,15 @@ const roleRepository = AppDataSource.getRepository(Role);
 const jwtSecret = process.env.JWT_SECRET || "your-secret-key";
 
 export class AuthService {
-  static async register(email: string, password: string, name: string, surname: string) {
+  static async register(
+    email: string,
+    password: string,
+    username: string,
+    name: string,
+    surname: string
+  ) {
     try {
-      if (!email || !password || !name || !surname) {
+      if (!email || !password || !username || !name || !surname) {
         throw new BadRequestException("All fields are required");
       }
 
@@ -31,6 +37,10 @@ export class AuthService {
       
       if (user) throw new ConflictException("User with this email already exists");
 
+      user = await userRepository.findOne({ where: { username } });
+      
+      if (user) throw new ConflictException("User with this username already exists");
+
       let role = await roleRepository.findOne({ where: { name: "Regular" } });
 
       if (!role) throw new BadRequestException("Default role not found");
@@ -38,6 +48,7 @@ export class AuthService {
       user = new User();
       user.email = email;
       user.password = password;
+      user.username = username;
       user.name = name;
       user.surname = surname;
       user.role = role;
@@ -47,6 +58,7 @@ export class AuthService {
 
       const userDTO = {
         email: user.email,
+        username: user.username,
         name: user.name,
         surname: user.surname,
         role: user.role.name
@@ -59,7 +71,7 @@ export class AuthService {
     }
   }
 
-  static async login(email: string, password: string) {
+  static async login(email: string, username: string, password: string) {
     try {
       if (!email || !password) throw new BadRequestException("Email and password are required");
 
@@ -73,6 +85,7 @@ export class AuthService {
 
       const userDTO = {
         email: user.email,
+        username: user.username,
         name: user.name,
         surname: user.surname,
         role: user.role.name
@@ -89,6 +102,7 @@ export class AuthService {
     try {
       const userDTO = {
         email: user.email,
+        username: user.username,
         name: user.name,
         surname: user.surname,
         role: user.role.name
@@ -101,13 +115,22 @@ export class AuthService {
     }
   }
 
-  static async update(user: User, email: string, name: string, surname: string, password: string) {
+  static async update(user: User, email: string, username: string, name: string, surname: string, password: string) {
     try {
-      if (!email && !name && !surname && !password) {
+      if (!email && !username && !name && !surname && !password) {
         throw new BadRequestException("At least one field (email, name, surname, password) must be provided for update");
       }
   
+      let validationUser = await userRepository.findOne({ where: { email } });
+      
+      if (validationUser && validationUser !== user) throw new ConflictException("User with this email already exists");
+
+      validationUser = await userRepository.findOne({ where: { username } });
+      
+      if (validationUser && validationUser !== user) throw new ConflictException("User with this username already exists");
+
       if (email !== null) user.email = email;
+      if (username !== null)  user.username = username;
       if (name !== null) user.name = name;
       if (surname !== null) user.surname = surname;
 
@@ -121,6 +144,7 @@ export class AuthService {
 
       const userDTO = {
         email: user.email,
+        username: user.username,
         name: user.name,
         surname: user.surname,
         role: user.role.name
@@ -149,6 +173,7 @@ export class AuthService {
 
       const userDTO = {
         email: user.email,
+        username: user.username,
         name: user.name,
         surname: user.surname,
         role: user.role.name

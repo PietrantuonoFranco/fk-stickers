@@ -11,9 +11,9 @@ const jwtSecret = process.env.JWT_SECRET || "your-secret-key";
 export class AuthController {
   static async register(request: Request, response: Response) {
     try {
-      const { email, password, name, surname } = request.body;
+      const { email, password, username, name, surname } = request.body;
       
-      const user = AuthService.register(email, password, name, surname);
+      const user = AuthService.register(email, password, username, name, surname);
 
       const token = jwt.sign(user, jwtSecret, {  expiresIn: "1h" });
 
@@ -37,9 +37,9 @@ export class AuthController {
 
   static async login(request: Request, response: Response) {
     try {
-      const { email, password } = request.body;
+      const { email, username, password } = request.body;
 
-      const user = await AuthService.login(email, password);
+      const user = await AuthService.login(email, username, password);
       
       const token = jwt.sign(user, jwtSecret, { expiresIn: "1h" });
 
@@ -104,9 +104,9 @@ export class AuthController {
     try {
       const user = request.user as User;
 
-      const { email, name, surname, password } = request.body;
+      const { email, username, name, surname, password } = request.body;
 
-      const updatedUser = await AuthService.update(user, email, name, surname, password);
+      const updatedUser = await AuthService.update(user, email, username, name, surname, password);
 
       return response.status(200).json({
         user: updatedUser,
