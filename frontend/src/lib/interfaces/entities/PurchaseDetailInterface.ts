@@ -2,7 +2,7 @@ import Purchase from './PurchaseInterface';
 import Sticker from './StickerInterface';
 import Size from './SizeInterface';
 
-export default interface PurchaseDetailInterface {
+export default interface PurchaseDetail {
     id: number;
     quantity: number;
     subtotal: number;
